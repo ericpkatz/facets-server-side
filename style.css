@@ -1,0 +1,46 @@
+body {
+  font-family: verdana;
+}
+
+main {
+  display: flex;
+}
+
+main > * {
+  flex: 1;
+}
+
+.facet { 
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 2rem 0;
+}
+
+.facet > * {
+  margin: 0.2rem;
+  font-size: smaller;
+  border: solid 1px dodgerBlue;
+}
+
+.xs {
+  font-size: 0.5rem;
+}
+.small {
+  font-size: 0.7rem;
+}
+.medium {
+  font-size: 0.9rem;
+}
+.large {
+  font-size: 1.2rem;
+}
+.xl {
+  font-size: 1.3rem;
+}
+.xxl {
+  font-size: 1.4rem;
+}
+.xxxl {
+  font-size: 1.5rem;
+}
