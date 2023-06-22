@@ -13,8 +13,10 @@ app.use(require('morgan')('dev'));
 
 const port = process.env.PORT || 3000;
 app.listen(port, ()=> console.log(`listening on port ${port}`));
+app.use('/dist', express.static(path.join(__dirname, 'dist')));
 
-app.get('/', (req, res, next)=> res.sendFile(path.join(__dirname, 'client/index.html')));
+app.get('/', (req, res, next)=> res.sendFile(path.join(__dirname, 'static/index.html')));
+
 app.get('/app.js', (req, res, next)=> res.sendFile(path.join(__dirname, 'client/app.js')));
 app.get('/style.css', (req, res, next)=> res.sendFile(path.join(__dirname, 'style.css')));
 
@@ -57,6 +59,7 @@ app.get('/api/facets/shapes', async(req, res, next)=> {
     if(req.query.filter){
       filter = JSON.parse(req.query.filter);
     }
+    console.log(filter);
     if(filter.colorId === ''){
       delete filter.colorId;
     }
